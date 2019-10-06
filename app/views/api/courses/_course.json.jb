@@ -1,0 +1,6 @@
+{
+  id: course.id, 
+  num: course.num, 
+  name: course.name, 
+  department: course.department 
+}
