@@ -14,8 +14,8 @@ Rails.application.routes.draw do
     delete "posts/:id" => "posts#destroy"
     get "/courses" => "courses#index"
     get "/courses/:id" => "courses#show"
-    get "/resourses" => "resources#index"
-    get "/resources/:id" => "recources#show"
+    get "/resources" => "resources#index"
+    get "/resources/:id" => "resources#show"
   end 
 
 

@@ -1,0 +1,3 @@
+@resources.map do |resource|
+  render partial: "resource.json.jb", locals: {resource: resource}
+end   

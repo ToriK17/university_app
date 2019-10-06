@@ -1,14 +1,20 @@
 class Api::PostsController < ApplicationController
 
   def create
-    @post = Post.new(
+    post = Post.new(
       details: params[:details], 
       professor_name: params[:professor_name], 
       course_id: params[:course_id], 
       user_id: params[:user_id]
       )
-    @post.save
-    redirect_to '/posts/#{@post.id}'
+    
+    if post.save
+      render json: {message: 'Post created'}, status: :created
+    else 
+      render json: {errors: post.errors.full_messages}, status: :bad_request
+    end  
+
+    # redirect_to '/posts/#{@post.id}'
   end
 
   def show
@@ -17,20 +23,19 @@ class Api::PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
-    @post.update(
+    post = Post.find(params[:id])
+    post.update(
       details: params[:details], 
       professor_name: params[:professor_name], 
       course_id: params[:course_id], 
       user_id: params[:user_id]
       )
-    redirect_to '/posts/#{@post.id}'
+    post.save
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to '/posts'
+    post = Post.find(params[:id])
+    post.destroy
   end
 
 end

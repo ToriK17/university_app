@@ -6,7 +6,7 @@ class Api::ResourcesController < ApplicationController
   end
 
   def show
-    @resources = Resource.find(params[:id])
+    @resource = Resource.find(params[:id])
     render 'show.json.jb'
   end
 

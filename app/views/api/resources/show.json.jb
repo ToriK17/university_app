@@ -1,4 +1,1 @@
-{
-  id: @resource.id,
-  name: @resource.name
-}
+render partial: "resource.json.jb", locals: { resource: @resource }
