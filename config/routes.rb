@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     get "/courses/:id" => "courses#show"
     get "/resourses" => "resources#index"
     get "/resources/:id" => "recources#show"
-  end
+  end 
 
 
 end
