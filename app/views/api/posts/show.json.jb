@@ -1,0 +1,7 @@
+{
+  id: @post.id,
+  details: @post.details, 
+  professor_name: @post.professor_name, 
+  course_id: @post.course_id, 
+  user_id: @post.user_id
+}
