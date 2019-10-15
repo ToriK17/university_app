@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get "/users/:id" => "users#show"
     patch "/users/:id" => "users#update"
     delete "/users/:id" => "users#destroy"
+    post "/sessions" => "sessions#create"
     post "/posts" => "posts#create"
     get "/posts/:id" => "posts#show"
     patch "/posts/:id" => "posts#update"
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
     get "/courses" => "courses#index"
     get "/courses/:id" => "courses#show"
     get "/resources" => "resources#index"
-    get "/resources/:id" => "resources#show"
+    get "/resources/:id" => "resources#show" 
   end 
 
 
