@@ -11,8 +11,11 @@ class Api::PostsController < ApplicationController
       )
     
     if @post.save
+      @post_info = params[:post_info]
+      post_info.each do |info|
+        PostResource.create({resource_id: @resource_id, , resource_details: @resource_details}, post_id: @post.id)
+      end     
       
-      # once it saves then I add the post resources 
       render json: {message: 'Post created'}, status: :created
     else 
       render json: {errors: post.errors.full_messages}, status: :bad_request
