@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
 
-  before_action :authenticate_user, only: [:show, :update, :destroy]
+  # before_action :authenticate_user, only: [:show, :update, :destroy]
 
   def create 
 
@@ -19,7 +19,8 @@ class Api::UsersController < ApplicationController
 
 
   def show # profile page 
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
+
     render 'show.json.jb'
   end
 
@@ -29,7 +30,8 @@ class Api::UsersController < ApplicationController
     if @user == current_user
       @user.update( 
         user_name: params[:user_name] || @user.user_name,
-        email: params[:email] || @user.email
+        email: params[:email] || @user.email, 
+        password: params[:password] || @user.password_digest
       )
       @user.save
       

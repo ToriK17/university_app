@@ -11,6 +11,8 @@ class Api::PostsController < ApplicationController
       )
     
     if @post.save
+      
+      # once it saves then I add the post resources 
       render json: {message: 'Post created'}, status: :created
     else 
       render json: {errors: post.errors.full_messages}, status: :bad_request
