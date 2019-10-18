@@ -58,7 +58,11 @@ class Api::PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
+    if @post.user_id == current_user[:id]
+      @post.destroy
+    else
+      render json: {}, status: :unauthorized 
+    end       
   end
 
 end

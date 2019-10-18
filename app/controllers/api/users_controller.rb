@@ -3,7 +3,6 @@ class Api::UsersController < ApplicationController
   before_action :authenticate_user, only: [:show, :update, :destroy]
 
   def create 
-
     @user = User.new(
       user_name: params[:user_name], 
       email: params[:email],
@@ -37,7 +36,6 @@ class Api::UsersController < ApplicationController
         password: params[:password] || @user.password_digest
       )
       @user.save
-      
     else
       render json: {}, status: :unauthorized
     end   
