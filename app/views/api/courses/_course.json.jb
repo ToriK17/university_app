@@ -2,5 +2,6 @@
   id: course.id, 
   num: course.num, 
   name: course.name, 
-  department: course.department 
+  department: course.department, 
+  posts: course.posts 
 }

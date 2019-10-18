@@ -7,6 +7,7 @@ class Api::CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    #here I need to link to all posts related to this one course once found
     render 'show.json.jb'
   end
 

@@ -34,14 +34,22 @@ class Api::PostsController < ApplicationController
 
   def update    
     @post = Post.find(params[:id])
+    if @post.user_id == current_user[:id]
+     
+      @post.details = params[:details] || @post.details 
+      @post.professor_name = params[:professor_name] || @post.professor_name 
+      @post.course_id = params[:course_id] || @post.course_id
 
-    if @post.user_id == current_user[:id]  
-      @post.update(
-        details: params[:details] || @post.details, 
-        professor_name: params[:professor_name] || @post.professor_name, 
-        course_id: params[:course_id] || @post.course_id
-        )
-      @post.save 
+      @post.post_resources.destroy_all
+
+      resources = eval(params[:resources])
+      resources.each do |resource|
+        post_resource = PostResource.create(resource_id: resource[:id],  resource_details: resource[:details], post_id: @post.id)
+      end 
+
+      render 'show.json.jb'
+    
+    
     else 
       render json: {}, status: :unauthorized  
     end 
