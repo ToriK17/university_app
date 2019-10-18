@@ -1,7 +1,7 @@
 class Api::PostsController < ApplicationController
 
   before_action :authenticate_user, only: [:create, :update, :destroy] 
-  
+   
   def create
     @post = Post.new(
       details: params[:details], 
@@ -17,8 +17,8 @@ class Api::PostsController < ApplicationController
       # front end may pass as string or normal array
       resources.each do |resource|
         post_resource = PostResource.create(resource_id: resource[:id],  resource_details: resource[:details], post_id: @post.id)
-        p "======================#{resource}"
-        p "======================= #{post_resource.errors.full_messages}"
+        # p "======================#{resource}"
+        # p "======================= #{post_resource.errors.full_messages}"
       end     
       
       render 'show.json.jb', status: :created

@@ -1,4 +1,4 @@
 {
  id: resource.id, 
  name: resource.name 
-}
+} 

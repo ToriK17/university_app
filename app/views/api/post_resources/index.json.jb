@@ -1,0 +1,3 @@
+@post_resources.map do |post_resource|
+  render partial: "post_resource.json.jb", locals: {post_resource: post_resource}
+end  

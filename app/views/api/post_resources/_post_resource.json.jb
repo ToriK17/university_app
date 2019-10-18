@@ -1,0 +1,7 @@
+{
+  id: post_resource.id,
+  resource_id: post_resource.resource_id, 
+  post_id: post_resource.post_id, 
+  resource_details: post_resources.resource_details
+  
+}
