@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
 
-  # before_action :authenticate_user, only: [:show, :update, :destroy]
+  before_action :authenticate_user, only: [:show, :update, :destroy]
 
   def create 
 
@@ -20,8 +20,11 @@ class Api::UsersController < ApplicationController
 
   def show # profile page 
     @user = User.find(params[:id])
-  
-    render 'show.json.jb'
+    if @user.id == current_user[:id]
+      render 'show.json.jb'
+    else 
+      render json: {}, status: :unauthorized
+    end  
   end
 
   def update
