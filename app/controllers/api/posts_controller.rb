@@ -10,13 +10,18 @@ class Api::PostsController < ApplicationController
       user_id: current_user[:id]
       )
     
-    if @post.save
-      @post_info = params[:post_info]
-      post_info.each do |info|
-        PostResource.create({resource_id: @resource_id, , resource_details: @resource_details}, post_id: @post.id)
+        # resources = [ {id: 1, details: "string"}, {id: 2, details: "string 2" } ]
+
+    if @post.save  
+      resources = eval(params[:resources])
+      # front end may pass as string or normal array
+      resources.each do |resource|
+        post_resource = PostResource.create(resource_id: resource[:id],  resource_details: resource[:details], post_id: @post.id)
+        p "======================#{resource}"
+        p "======================= #{post_resource.errors.full_messages}"
       end     
       
-      render json: {message: 'Post created'}, status: :created
+      render 'show.json.jb', status: :created
     else 
       render json: {errors: post.errors.full_messages}, status: :bad_request
     end  
