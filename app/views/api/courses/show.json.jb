@@ -1,1 +1,12 @@
-render partial: "course.json.jb", locals: { course: @course }  
+course = render partial: "course.json.jb", locals: { course: @course }  
+
+course[:posts] = @course.posts.map do |post| 
+  p = render partial: "api/posts/post", locals: {
+    post:post} 
+  p[:user_info] = post.user.user_name  
+  p[:post_resources] = post.post_resources.map do |post_resource|
+    render partial: "api/post_resources/post_resource", locals: {post_resource: post_resource}
+    end 
+  p    
+end  
+course  
