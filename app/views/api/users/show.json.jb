@@ -1,2 +1,12 @@
 user = render partial: "user.json.jb", locals: { user: @user } 
 
+
+user[:posts] = @user.posts.map do |post| 
+  p = render partial: "api/posts/post", locals: { post:post}
+  p[:post_resources] = post.post_resources.map do |post_resource|
+    render partial: "api/post_resources/post_resource", 
+    locals: {post_resource: post_resource}
+  end 
+  p 
+end 
+user      
