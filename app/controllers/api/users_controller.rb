@@ -3,8 +3,11 @@ class Api::UsersController < ApplicationController
   before_action :authenticate_user, only: [:show, :update, :destroy]
 
   def create 
+    response = Cloudinary::Uploader.upload(params[:image])
+    cloudinary_url = response["secure_url"]
     @user = User.new(
-      user_name: params[:user_name], 
+      user_name: params[:user_name],
+      image: cloudinary_url, 
       email: params[:email],
       password: params[:password],
       password_confirmation: params[:password_confirmation]
