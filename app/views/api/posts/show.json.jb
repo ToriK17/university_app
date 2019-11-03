@@ -3,5 +3,5 @@ post = render partial: "post.json.jb", locals: { post: @post }
 post[:resources] = @post.post_resources.map do |post_resource|
   render partial: "api/post_resources/post_resource", locals: {post_resource: post_resource}
 end   
-post
+post 
 

@@ -10,7 +10,7 @@ class Api::PostsController < ApplicationController
       user_id: current_user[:id]
       )
     
-        # resources = [ {id: 1, details: "string"}, {id: 2, details: "string 2" } ]
+        # resources = [ {id: 1, details: "string"}, {id: 2, details: "string 2" } ] 
 
     if @post.save  
       resources = eval(params[:resources])
