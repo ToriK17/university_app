@@ -3,7 +3,8 @@
   details: post.details, 
   professor_name: post.professor_name, 
   course_id: post.course_id,  
-  user_id: post.user_id, 
+  user_id: post.user_id,
+  course_name: post.course.name, 
   formatted: {
     created_at: post.strftime_created_at,
     updated_at: post.strftime_updated_at

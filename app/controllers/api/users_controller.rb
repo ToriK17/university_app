@@ -35,9 +35,11 @@ class Api::UsersController < ApplicationController
     if @user == current_user
       @user.update( 
         user_name: params[:user_name] || @user.user_name,
-        email: params[:email] || @user.email, 
-        password: params[:password] || @user.password_digest
+        email: params[:email] || @user.email
       )
+      if params[:password]
+        @user.password = params[:password]
+      end
       @user.save
     else
       render json: {}, status: :unauthorized
