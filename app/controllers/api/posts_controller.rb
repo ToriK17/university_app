@@ -40,7 +40,7 @@ class Api::PostsController < ApplicationController
 
       @post.post_resources.destroy_all
 
-      resources = eval(params[:resources])
+      resources = params[:resources]
       resources.each do |resource|
         post_resource = PostResource.create(resource_id: resource[:id],  resource_details: resource[:details], post_id: @post.id)
       end 
