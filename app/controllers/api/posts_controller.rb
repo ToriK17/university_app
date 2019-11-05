@@ -37,21 +37,22 @@ class Api::PostsController < ApplicationController
       @post.details = params[:details] || @post.details 
       @post.professor_name = params[:professor_name] || @post.professor_name 
       @post.course_id = params[:course_id] || @post.course_id
+ 
 
-      @post.post_resources.destroy_all
+      if @post.save
+        @post.post_resources.destroy_all
 
-      resources = params[:resources]
-      resources.each do |resource|
-        post_resource = PostResource.create(resource_id: resource[:id],  resource_details: resource[:details], post_id: @post.id)
+        resources = params[:post_resources]
+        resources.each do |resource|
+          PostResource.create(resource_id: resource[:id],  resource_details: resource[:details], post_id: @post.id)
+        end
+        render 'show.json.jb'
+      else 
+        render json: {errors: @post.errors.full_messages}, status: :bad_request
       end 
-
-      render 'show.json.jb'
-    
-    
     else 
-      render json: {}, status: :unauthorized  
+      render json: {}, status: :unauthorized
     end 
-    
   end
 
   def destroy

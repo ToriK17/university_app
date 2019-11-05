@@ -1,7 +1,7 @@
 {
-  id: post_resource.id,
-  name: post_resource.resource.name, 
-  
+  # id: post_resource.id,
+  id: post_resource.resource_id,
+  name: post_resource.resource.name,
   details: post_resource.resource_details
   
 }
