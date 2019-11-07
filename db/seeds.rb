@@ -48,6 +48,7 @@ User.create!([
   {user_name: "AbedCoolFilms", email: "abed.n@gmail.com", password_digest: "password"},
   {user_name: "Star_Burns", email: "osbourne@gmail.com", password_digest: "password"},
   {user_name: "Star_Burns", email: "osbourne@gmail.com", password_digest: "password"},
+  {user_name: "Pierce_Hawthorn", email: "hawthorn_wipes@gmail.com", password_digest: "password"}
 ])
 
 Resource.create!([
@@ -55,7 +56,7 @@ Resource.create!([
   {name: "Midterm"}, 
   {name: "Final"},
   {name: "Notes"},
-   
+
   {name: "Knowledge Nuggets"}
 ])
 
