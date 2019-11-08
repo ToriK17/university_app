@@ -10,4 +10,4 @@ class Api::ResourcesController < ApplicationController
     render 'show.json.jb'
   end
 
-end
+end 

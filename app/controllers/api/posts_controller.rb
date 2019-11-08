@@ -2,7 +2,7 @@ class Api::PostsController < ApplicationController
 
   before_action :authenticate_user, only: [:create, :update, :destroy] 
    
-  def create
+  def create 
     @post = Post.new(
       details: params[:details], 
       professor_name: params[:professor_name], 
