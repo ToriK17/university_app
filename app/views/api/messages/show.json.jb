@@ -1,0 +1,5 @@
+message =render partial: "message.json.jb", locals: { message: @message } 
+message[:users] = @message.users.map do |user|
+  render partial: "api/users/user", locals: {user: user}
+end   
+message 
