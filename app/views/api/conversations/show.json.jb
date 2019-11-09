@@ -1,7 +1,10 @@
-# this is where messages are shown. 
 conversation = render partial: "conversation.json.jb", locals: { conversation: @conversation }
 
-conversation[:messages] = @conversation.messages.map do |messages|
-  render partial: "api/messages/messages", locals: {messages: messages}
+conversation[:messages] = @conversation.messages.map do |message|
+  p = render partial: "api/messages/message", locals: {message: message}
+  p[:user_id] = message.user_id
+  p[:user_name] = message.user.user_name
 end 
 conversation  
+
+# this is where messages are shown. 

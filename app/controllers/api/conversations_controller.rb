@@ -15,14 +15,14 @@ class Api::ConversationsController < ApplicationController
 
   def show
     # this is where messages are shown. 
-    @conversation = Conversation.find(params[:id])
+    @conversation = Conversation.all 
 
     render 'show.json.jb'
   end
 
   def index
     # this is where all conversations are shown. 
-    @conversation = Conversation.find_by(current_user[:id])
+    @conversation = Conversation.find_by(current_user[:sender_id])
   end
 
   def destroy
