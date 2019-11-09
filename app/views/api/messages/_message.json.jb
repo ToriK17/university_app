@@ -3,5 +3,6 @@
   user_id: message.user_id,
   body: message.body,
   name: message.user.user_name,
+  conversation_id:message.conversation_id,
   created_at: message.created_at
 }  

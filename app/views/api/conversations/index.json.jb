@@ -1,0 +1,4 @@
+@conversations.map do |conversation|
+  render partial: "conversation.json.jb", locals: {conversation: conversation}
+end   
+# this is where all conversations are shown. 

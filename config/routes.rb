@@ -18,7 +18,10 @@ Rails.application.routes.draw do
     get "/resources" => "resources#index"
     get "/resources/:id" => "resources#show"
     get '/messages' => 'messages#index'
-    post '/messages' => 'messages#create' 
+    post '/messages' => 'messages#create'
+    post "/conversations" => "conversations#create"
+    get "/conversations/:id" => "conversations#show"
+    delete "/conversations/:id" => "conversations#destroy" 
   end 
 
 
