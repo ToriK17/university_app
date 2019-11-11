@@ -1,9 +1,10 @@
 conversation = render partial: "conversation.json.jb", locals: { conversation: @conversation }
 
 conversation[:messages] = @conversation.messages.map do |message|
-  p = render partial: "api/messages/message", locals: {message: message}
-  p[:user_id] = message.user_id
-  p[:user_name] = message.user.user_name
+  m = render partial: "api/messages/message", locals: {message: message}
+  m[:user_id] = message.user_id
+  m[:user_name] = message.user.user_name
+  m 
 end 
 conversation  
 

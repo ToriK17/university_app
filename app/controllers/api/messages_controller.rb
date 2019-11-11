@@ -1,21 +1,10 @@
 class Api::MessagesController < ApplicationController
-  before_action :find_conversation!
-
-  # def find_conversation!
-  #   @conversation = Conversation.find_by(id: params[:conversation_id])
-  # end
-
-  # def set_conversation
-  #   @conversation = Conversation.find_by(id: params[:id])
-  # end
   
-  def index
-    @messages = Message.all.order(id: :desc)
-    render 'index.json.jb'
-  end
+
 
   def show
-    @personal_message = PersonalMessage.new
+    @message =Message.find_by(id: params[:id])
+    render 'show.json.jb'
   end
   
   

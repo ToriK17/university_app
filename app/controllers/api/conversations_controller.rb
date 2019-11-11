@@ -7,10 +7,7 @@ class Api::ConversationsController < ApplicationController
     render 'index.json.jb'
   end
 
-  # def index
-  #   @conversation = Conversation.between(current_user).order('updated_at DESC')
-  #   render 'index.json.jb'
-  # end
+  
 
   def show
     # this is where one to one messages are shown. 
@@ -40,8 +37,7 @@ class Api::ConversationsController < ApplicationController
   def create
     # finding the matched user from a post: 
     
-    matched_user = params[:user_id]
-    
+    matched_user = params[:recipient_id]    
     # add to existing convo or make new one 
     if Conversation.between(current_user.id, matched_user)
      .present? 

@@ -1,14 +1,15 @@
 # this is where all conversations are shown. 
+
 @conversations.map do |conversation|
+  c ={id: conversation.id}
   if conversation.sender_id == current_user.id
-    render partial: conversation.recipient, partial: "api/users/user", as: :user
+    c[:user] = render partial: "api/users/user", locals: {user: conversation.recipient}
   else 
-    render partial: conversation.sender, partial: "api/users/user", as: :user
+    c[:user] = render partial: "api/users/user", locals: {user: conversation.sender}
   end  
+  c
 end   
-#Question: in the rendering of partials, why does it also pull up the user's information here?
 
 
-# regular index syntax
-# render partial: "conversation.json.jb", locals: {conversation: conversation}
+
 
