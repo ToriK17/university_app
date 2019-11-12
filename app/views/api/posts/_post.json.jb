@@ -4,5 +4,8 @@
   professor_name: post.professor_name, 
   course_id: post.course_id,  
   user_id: post.user_id,
-  course_name: post.course.name 
+  course_name: post.course.name, 
+  user_name: post.user.user_name, 
+  user_image: post.user.image, 
+  course_department: post.course.department 
 }
