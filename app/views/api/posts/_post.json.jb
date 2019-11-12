@@ -7,5 +7,6 @@
   course_name: post.course.name, 
   user_name: post.user.user_name, 
   user_image: post.user.image, 
-  course_department: post.course.department 
+  course_department: post.course.department, 
+  updated_at: post.updated_at 
 }
