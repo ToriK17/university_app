@@ -2,6 +2,7 @@
 
 @conversations.map do |conversation|
   c ={id: conversation.id}
+  c[:last_message] = render partial: "api/messages/message", locals: {message: conversation.messages.last}
   if conversation.sender_id == current_user.id
     c[:user] = render partial: "api/users/user", locals: {user: conversation.recipient}
   else 

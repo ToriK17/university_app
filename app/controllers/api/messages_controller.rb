@@ -18,10 +18,11 @@ class Api::MessagesController < ApplicationController
 
     ActionCable.server.broadcast "messages_channel", {
       id: @message.id,
-      name: @message.user.user_name,
+      user_name: @message.user.user_name,
       body: @message.body,
       conversation_id: @message.conversation_id,
-      created_at: @message.created_at.strftime("%b %e, %l:%M %p")
+      created_at: @message.created_at.strftime("%b %e, %l:%M %p"),
+      image: @message.user.image
     }
     
     render "show.json.jb"
