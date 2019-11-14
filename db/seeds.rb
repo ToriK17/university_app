@@ -1,5 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# # This file should contain all the record creation needed to seed the database with its default values.
+# # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 # Course.create!([
 #   {num: 101 , name: "Spanish 101", department: "Spanish"}, 
@@ -43,20 +43,19 @@
 # ])
 
 # User.create!([
-#   {user_name: "Jeff_Winger", email: "j.winger@gmail.com", password_digest: "password"}, 
-#   {user_name: "TroyBarnes", email: "troyb@gmail.com", password_digest: "password"},
-#   {user_name: "Senor_Cheng", email: "senorcheng@gmail.com", password_digest: "password"},
-#   {user_name: "Shirley_B", email: "S.Bennet@gmail.com", password_digest: "password"},
-#   {user_name: "Annie_E", email: "j.winger@gmail.com", password_digest: "password"},
-#   {user_name: "AbedsCoolFilms", email: "abed.n@gmail.com", password_digest: "password"},
+#   {user_name: "Jeff_Winger", email: "j_winger09@gmail.com", password_digest: "password"}, 
+#   {user_name: "TroyBarnes", email: "troy_89@gmail.com", password_digest: "password"},
+#   {user_name: "Senor_Cheng", email: "senor_cheng78@gmail.com", password_digest: "password"},
+#   {user_name: "Shirley_B", email: "S_Bennet09@gmail.com", password_digest: "password"},
+#   {user_name: "Annie_E", email: "star_student07@gmail.com", password_digest: "password"},
+#   {user_name: "AbedsCoolFilms", email: "abed_n@gmail.com", password_digest: "password"},
 #   {user_name: "Star_Burns", email: "osbourne@gmail.com", password_digest: "password"},
-#   {user_name: "Star_Burns", email: "osbourne@gmail.com", password_digest: "password"},
-#   {user_name: "Pierce_Hawthorn", email: "hawthorn_wipes@gmail.com", password_digest: "password"},
-#   {user_name: "Colonel Kernel", email: "boris@gmail.com", password_digest: "password"},
-#   {user_name: "Apachai", email: "roo@gmail.com", password_digest: "password"},
-#   {user_name: "Freya", email: "destroyerofworlds@gmail.com", password_digest: "password"},
-#   {user_name: "Citra", email: "handofjustice@gmail.com", password_digest: "password"},
-#   {user_name: "mr_bear", email: "bear_rawr_rawr@gmail.com", password_digest: "password"}
+#   {user_name: "Pierce_Hawthorn", email: "hawthorn_wipes67@gmail.com", password_digest: "password"},
+#   {user_name: "Colonel Kernel", email: "borist@gmail.com", password_digest: "password"},
+#   {user_name: "Apachai", email: "baw_roo@gmail.com", password_digest: "password"},
+#   {user_name: "Freya", email: "destroyer_of_worlds@gmail.com", password_digest: "password"},
+#   {user_name: "Citra", email: "hand_of_justice@gmail.com", password_digest: "password"},
+#   {user_name: "mr_bear", email: "bear.rawr.rawr@gmail.com", password_digest: "password"}
 # ])
 
 # Resource.create!([
